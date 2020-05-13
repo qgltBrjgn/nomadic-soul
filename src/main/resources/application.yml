@@ -1,13 +1,18 @@
 
 spring:
   datasource:
-    name: test  #数据库名
-    url: jdbc:mysql://122.51.246.46:3306/nomadic-soul #url
-    username: nomadic-soul  #用户名
-    password: feifei12138...  #密码
-    driver-class-name: com.mysql.cj.jdbc.Driver  #数据库链接驱动
+    name: ns
+    url: jdbc:mysql://122.51.246.46:3306/nomadic-soul
+    username: nomadic-soul
+    password: feifei12138...
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml  #配置映射文件
-  type-aliases-package: com.nomadicsoulmgl.nomadicsoul.bean #配置实体类
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.nomadicsoulmgl.nomadicsoul.bean
+
+server:
+  port: 8089
+  servlet:
+    context-path: /ns
