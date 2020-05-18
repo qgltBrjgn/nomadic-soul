@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,13 @@ public class ConnectionInfoController {
         map.put("connectionList", connectionInfoBeans);
 
         return map;
+    }
+
+
+    @RequestMapping(value = "/getConnectionIpAddr", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> getConnectionIpAddr(HttpServletRequest request) {
+        return connectionInfoService.getConnectionIpAddr(request);
     }
 
 
